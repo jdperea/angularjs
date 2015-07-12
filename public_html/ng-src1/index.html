@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="CustomDirective">
+    <head>
+        <title>Angular NG SRC</title>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-controller="AppCtrl">
+        <ul class="no-list" ng-cloak><!--Para poder que funcione angular se debe cargar arriba-->
+            <li ng-repeat="repo in repos">
+                <img ng-src="{{repo.owner.avatar_url}}"><!--Esta directiva elimina el error 404 de imagen no encontrada. ya que angular procesa la imagen pero html trata de buscar el nombre del archivo en src y su ubicacion-->
+                <h1>{{repo.name}}</h1>
+            </li>
+        </ul>
+    </body>
+</html>
